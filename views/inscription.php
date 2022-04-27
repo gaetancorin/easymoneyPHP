@@ -14,12 +14,13 @@
 <body class="bodyInscription">
     <?php
         include('./inc/header.php');
+
     ?>
 
     <div class="containerInscription">
         <div class="inscriptionFormulaire">
             <h1>Inscrivez-vous !</h1>
-            <form id="form_text" action="../" method="POST">
+            <form id="form_text" action="../controllers/getInscription.php" method="POST">
                 <label for="prenom">Quel est votre prénom</label>
                 <input type="text" name="prenom" placeholder="Votre prénom" id="prenom" required>
                 <label for="nom">Quelle est votre nom ?</label>

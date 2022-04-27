@@ -1,5 +1,5 @@
 <?php
-class user
+class User
 {
     // attributs par rapport à la bdd
     public $id_user;

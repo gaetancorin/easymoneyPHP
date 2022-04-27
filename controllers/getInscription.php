@@ -1,6 +1,7 @@
 <?php
-// include('../models/animaux.php');
-// include('../config/bdd.php');
+
+include('../config/bdd.php');
+include('../models/user.php');
 
 if (
     !empty($_POST['prenom'])
@@ -19,15 +20,15 @@ if (
     
     
     try{
-        $user = new Utilisateur();
-        $user->setNom($prenom);
-        $user->setCouleur($nom);
-        $user->setOrigines($pseudo);
-        $user->setIdRace($pwd);
-        $user->setAvatar($email);
-        $user->setAvatar($fond);
+        $user = new User();
+        $user->set_prenom($prenom);
+        $user->set_nom($nom);
+        $user->set_pseudo($pseudo);
+        $user->set_mot_de_passe($pwd);
+        $user->set_email($email);
+        $user->set_argent($fond);
 
-        $user->createOne();
+        $user->create_user();
         
 
     } catch (Exception $e){
