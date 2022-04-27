@@ -15,7 +15,7 @@ class equipe
         $this->connect = new ConfigDB();
         $this->connect = $this->connect->getConnection();
     }
-
+    //getter
     public function get_id_equipe(){
         return $this->id_equipe;
     }
@@ -26,7 +26,7 @@ class equipe
         return $this->detail_equipe;
     }
 
-
+    //setter
     public function set_id_equipe($id_equipe){
         $this->id_equipe = $id_equipe;
     }
