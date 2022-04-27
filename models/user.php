@@ -39,6 +39,27 @@ class user
         return $this->detail_equipe;
     }
 
+    //setter
+    public function set_id_user($id_user){
+        $this->id_user = $id_user;
+    }
+    public function set_pseudo($pseudo){
+        $this->pseudo = $pseudo;
+    }
+    public function set_prenom($prenom){
+        $this->prenom = $prenom;
+    }
+    public function set_nom($nom){
+        $this->nom = $nom;
+    }
+    public function set_mot_de_passe($mot_de_passe){
+        $this->mot_de_passe = $mot_de_passe;
+    }
+    public function set_email($email){
+        $this->email = $email;
+    }
+    
+
     // méthode qui va créer un utilisateur dans la BDD
     public function create_user(){
         try {
