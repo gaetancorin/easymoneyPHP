@@ -38,5 +38,54 @@ class game
         $this->nom_game = $nom_game;
     }
 
+
+    public function lire_games_finis($classement_recent){
+        $classement = ($classement_recent -1)*2;
+        $req = $this->connect->prepare(
+            'SELECT
+                    nom_game, date_game, nom_equipe, point_equipe
+                FROM 
+                    equipe
+                INNER JOIN
+                    participer
+                ON 
+                    participer.id_equipe = equipe.id_equipe
+                INNER JOIN
+                    game
+                ON 
+                    game.id_game = participer.id_game
+                WHERE 
+                    date_game between "1900-01-01" and now()
+                ORDER BY
+                     date_game desc limit '.$classement.',2'
+        );
+        $req->execute();
+        return $req;
+    }
+    public function lire_games_futurs($classement_recent){
+        $classement = ($classement_recent -1)*2;
+        $req = $this->connect->prepare(
+            'SELECT
+                    nom_game, date_game, nom_equipe, detail_equipe
+                FROM 
+                    equipe
+                INNER JOIN
+                    participer
+                ON 
+                    participer.id_equipe = equipe.id_equipe
+                INNER JOIN
+                    game
+                ON 
+                    game.id_game = participer.id_game
+                WHERE 
+                    date_game between now() and "2200-01-01"
+                ORDER BY
+                     date_game asc limit '.$classement.',2'
+        );
+        $req->execute();
+        return $req;
+    }
+
+
     
 }

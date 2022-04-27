@@ -3,9 +3,9 @@ class ConfigDB
 {
     //attributs de la BDD
     private $host = 'localhost';
-    private $database_name = 'animaux';
+    private $database_name = 'easymoney';
     private $username = 'root';
-    private $password = 'root';
+    private $password = '';
 
     public $connect;
 

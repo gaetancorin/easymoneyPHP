@@ -62,52 +62,5 @@ class equipe
         return $req;
     }
 
-    public function lire_cinq_games_finis(){
-        $req = $this->connect->prepare(
-            'SELECT
-                    nom_equipe, nom_game, date_game, point_equipe
-                FROM 
-                    equipe
-                INNER JOIN
-                    participer
-                ON 
-                    participer.id_equipe = equipe.id_equipe
-                INNER JOIN
-                    game
-                ON 
-                    game.id_game = participer.id_game
-                WHERE 
-                    date_game between "1900-01-01" and now()
-                ORDER BY
-                     date_game desc limit 10'
-        );
-        $req->execute();
-        return $req;
-    }
-
-    public function lire_cinq_games_futurs(){
-        $req = $this->connect->prepare(
-            'SELECT
-                    nom_equipe, nom_game, date_game
-                FROM 
-                    equipe
-                INNER JOIN
-                    participer
-                ON 
-                    participer.id_equipe = equipe.id_equipe
-                INNER JOIN
-                    game
-                ON 
-                    game.id_game = participer.id_game
-                WHERE 
-                    date_game between now() and "2200-01-01"
-                ORDER BY
-                     date_game asc limit 10'
-        );
-        $req->execute();
-        return $req;
-    }
-
-    // select nom_equipe, nom_game, date_game from equipe inner join participer on participer.id_equipe = equipe.id_equipe inner join game on game.id_game = participer.id_game where date_game between now() and "2200-01-01" order by date_game asc limit 10;
 }
 ?>

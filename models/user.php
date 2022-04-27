@@ -8,6 +8,7 @@ class user
     public $nom;
     public $mot_de_passe;
     public $email;
+    public $argent;
 
     // attribut de connexion à la bdd
     public $connect;
@@ -38,6 +39,9 @@ class user
     public function get_email(){
         return $this->detail_equipe;
     }
+    public function get_argent(){
+        return $this->argent;
+    }
 
     //setter
     public function set_id_user($id_user){
@@ -57,6 +61,9 @@ class user
     }
     public function set_email($email){
         $this->email = $email;
+    }
+    public function set_argent($argent){
+        $this->argent = $argent;
     }
     
 
