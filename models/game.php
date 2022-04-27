@@ -43,7 +43,7 @@ class game
         $classement = ($classement_recent -1)*2;
         $req = $this->connect->prepare(
             'SELECT
-                    nom_game, date_game, nom_equipe, point_equipe
+                    nom_game, date_game, nom_equipe, detail_equipe, point_equipe
                 FROM 
                     equipe
                 INNER JOIN
