@@ -93,4 +93,25 @@ class User
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+    public function get_one_user(){
+        $req = $this->connect->prepare(
+            'SELECT
+                    *
+                FROM 
+                    utilisateur
+                WHERE 
+                    pseudo = :pseudo
+                AND
+                    mot_de_passe = :mot_de_passe'
+        );
+        $req->execute(
+            array(
+                ':pseudo' => $this->pseudo,
+                ':mot_de_passe' => $this->mot_de_passe
+            )
+        );
+        return $req;
+    }
+
 }

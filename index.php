@@ -14,25 +14,34 @@
         <ul class="menuBar">
             <li><a href="../index.php">Accueil</a></li>
             <li><a href="../controllers/getAllAll.php">Nos Matchs</a></li>
-            <li><a href="./views/inscription.php">Inscription</a></li>
-            <li><a href="../views/addOne.php">Profil</a></li>
+			<?php
+			session_start();
+			if (!isset($_SESSION['pseudo'])){
+			echo '<li><a href="./views/inscription.php">Inscription</a></li>
+				  <li><a href="./views/connexion.php">Connexion</a></li>';}
+			else{
+			echo '<li><a href="./views/profil.php">Profil</a></li>
+				  <li><a href="./controllers/deconnection.php">Déconnection</a></li>';}?>
+            <!-- <li><a href="./views/inscription.php">Inscription</a></li>
+			<li><a href="./views/connexion.php">Connexion</a></li>
+            <li><a href="../views/addOne.php">Profil</a></li> -->
         </ul>
     </div>
 </nav>
 
-<?php include("./controllers/getMach.php"); ?>
+<?php include("./controllers/getMatchFini.php"); ?>
 
 <ul class="tilesWrap">
 	<li>
-		<h2><?php echo $date_game1 ?></h2>
-		<h3>Les matchs arrivent</h3>
+		<h2><?php echo $matchs[0]["date_game"] ?></h2>
+		<h3><?php echo $matchs[0]["nom_equipe1"].' Vs '.$matchs[0]["nom_equipe2"] ?></h3>
 		<p>
-            ça arrive !
+			<?php echo $matchs[0]["detail_equipe1"].' face à '. $matchs[0]["detail_equipe2"]?>
 		</p>
 		<button>Parier ?</button>
 	</li>
 	<li>
-		<h2>02</h2>
+		<h2><?php echo $matchs[1]["date_game"] ?></h2>
 		<h3>Les matchs arrivent</h3>
 		<p>
 			on arrive très vite !

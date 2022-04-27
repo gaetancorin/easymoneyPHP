@@ -39,8 +39,7 @@ class game
     }
 
 
-    public function lire_games_finis($classement_recent){
-        $classement = ($classement_recent -1)*2;
+    public function lire_games_finis(){
         $req = $this->connect->prepare(
             'SELECT
                     nom_game, date_game, nom_equipe, detail_equipe, point_equipe
@@ -57,13 +56,13 @@ class game
                 WHERE 
                     date_game between "1900-01-01" and now()
                 ORDER BY
-                     date_game desc limit '.$classement.',2'
+                     date_game desc'
         );
         $req->execute();
         return $req;
     }
-    public function lire_games_futurs($classement_recent){
-        $classement = ($classement_recent -1)*2;
+
+    public function lire_games_futurs(){
         $req = $this->connect->prepare(
             'SELECT
                     nom_game, date_game, nom_equipe, detail_equipe
@@ -80,7 +79,7 @@ class game
                 WHERE 
                     date_game between now() and "2200-01-01"
                 ORDER BY
-                     date_game asc limit '.$classement.',2'
+                     date_game asc'
         );
         $req->execute();
         return $req;

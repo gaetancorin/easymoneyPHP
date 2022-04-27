@@ -28,13 +28,16 @@ if (
         $user->set_email($email);
         $user->set_argent($fond);
 
-        $user->create_user();
-        
+        $resultat = $user->create_user();
+
+        header('Location: ../index.php');
 
     } catch (Exception $e){
         die('Erreur : ' . $e->getMessage());
     }
 
 }
+
+
     
 ?>

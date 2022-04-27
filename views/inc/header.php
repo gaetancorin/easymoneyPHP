@@ -14,8 +14,17 @@
             <ul class="menuBar">
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="../controllers/getAllAll.php">Nos Matchs</a></li>
-                <li><a href="./views/inscription.php">Inscription</a></li>
-                <li><a href="../views/addOne.php">Profil</a></li>
+                <?php
+			    session_start();
+			    if (!isset($_SESSION['pseudo'])){
+			    echo '<li><a href="./views/inscription.php">Inscription</a></li>
+				      <li><a href="./views/connexion.php">Connexion</a></li>';}
+			    else{
+			    echo '<li><a href="../views/addOne.php">Profil</a></li>
+				      <li><a href="./controllers/deconnection.php">Déconnection</a></li>';}?>
+                <!-- <li><a href="./views/inscription.php">Inscription</a></li>
+                <li><a href="../views/connexion.php">Connexion</a></li>
+                <li><a href="../views/addOne.php">Profil</a></li> -->
             </ul>
         </div>
     </nav>
