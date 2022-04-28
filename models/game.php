@@ -87,6 +87,7 @@ class game
         $req->execute();
         return $req;
     }
+    // méthode qui récupère toutes les informations d'une game
     public function get_one_game(){
         $req = $this->connect->prepare(
             'SELECT
@@ -113,6 +114,47 @@ class game
         );
         return $req;
     }
+
+    // methode qui calcul le pourcentage d'argent miser sur chaque equipe d'un match
+    public function calcul_pourcentage_miser_total($nom_equipe1,$nom_equipe2){
+        // recupere tous les paris du matchs
+        $req = $this->connect->prepare(
+            'SELECT
+             nom_game, mise, nom_equipe 
+             from game 
+             inner join parier on parier.id_game = game.id_game 
+             inner join equipe on parier.id_equipe = equipe.id_equipe 
+              where nom_game = :nom_game;'
+        );
+        $req->execute(
+             array(
+                 ':nom_game' => $this->nom_game
+             )
+        );
+        // on enregistre le total des mises dans des variables
+        $mise_total_equipe1 = 0;
+        $mise_total_equipe2 = 0;
+        // la mise est additionner en fonction de son nom d'equipe
+        while ($donnees = $req->fetch()){
+
+            if ($donnees["nom_equipe"] == $nom_equipe1){
+                $mise_total_equipe1 += $donnees["mise"];
+            }
+            else if ($donnees["nom_equipe"] == $nom_equipe2){
+                $mise_total_equipe2 += $donnees["mise"];
+                
+            }
+        }
+        // on transforme les mises total d'equipe en pourcentage
+        $mise_total = $mise_total_equipe1 + $mise_total_equipe2;
+        $pourcentage_equipe1 = $mise_total_equipe1/$mise_total*100;
+        $pourcentage_equipe2 = $mise_total_equipe2/$mise_total*100;
+
+        return [$pourcentage_equipe1, $pourcentage_equipe2];
+
+    }
+
+
 
 
     

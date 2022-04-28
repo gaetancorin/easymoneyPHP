@@ -139,4 +139,27 @@ class User
         return $req;
     }
 
+    public function lire_paris_resultats(){
+        $req = $this->connect->prepare(
+            'SELECT
+             pseudo , equipe_parier.nom_equipe as nom_equipe_parier, equipe.nom_equipe, equipe.detail_equipe, nom_game, mise, date_game, point_equipe 
+             FROM
+             utilisateur  
+             inner join parier on parier.id_utilisateur = utilisateur.id_utilisateur 
+             inner join equipe as equipe_parier on parier.id_equipe = equipe_parier.id_equipe 
+             inner join game on parier.id_game = game.id_game 
+             inner join participer on participer.id_game = game.id_game 
+             inner join equipe on participer.id_equipe = equipe.id_equipe 
+             WHERE pseudo = :pseudo;
+             ORDER BY date_game desc;'
+        );
+        $req->execute(
+            array(
+                ':pseudo' => $this->pseudo
+            )
+        );
+        return $req;
+    }
+
+
 }
