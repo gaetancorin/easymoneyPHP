@@ -94,6 +94,7 @@ class User
         }
     }
 
+    // methode qui recupere un user par son pseudo et mot de passe pour connection
     public function get_one_user(){
         $req = $this->connect->prepare(
             'SELECT
@@ -109,6 +110,30 @@ class User
             array(
                 ':pseudo' => $this->pseudo,
                 ':mot_de_passe' => $this->mot_de_passe
+            )
+        );
+        return $req;
+    }
+
+    // methode qui recupere toutes les paris d un user grace a la table d asso parier
+    // ranger de facon descendant(de la date la plus grande a la plus petite) 
+    public function lire_paris(){
+        $req = $this->connect->prepare(
+            'SELECT
+             pseudo, nom_equipe, nom_game, mise, date_game 
+             FROM
+              utilisateur  
+            inner join parier on parier.id_utilisateur = utilisateur.id_utilisateur 
+            inner join equipe on parier.id_equipe = equipe.id_equipe 
+            inner join game on parier.id_game = game.id_game
+            WHERE
+            pseudo = :pseudo;
+            ORDER BY
+                date_game desc;'
+        );
+        $req->execute(
+            array(
+                ':pseudo' => $this->pseudo
             )
         );
         return $req;

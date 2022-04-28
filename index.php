@@ -29,7 +29,7 @@
     </div>
 </nav>
 
-<?php include("./controllers/getMatchFini.php"); ?>
+<?php include("./controllers/getMatchFutur.php"); ?>
 
 <ul class="tilesWrap">
 	<li>

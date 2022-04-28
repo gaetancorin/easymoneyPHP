@@ -38,7 +38,8 @@ class game
         $this->nom_game = $nom_game;
     }
 
-
+    // methode qui recupere toutes les infos des games avec les points
+    //  de aujourd'hui jusqu'a dans le passé
     public function lire_games_finis(){
         $req = $this->connect->prepare(
             'SELECT
@@ -62,6 +63,8 @@ class game
         return $req;
     }
 
+    // methode qui recupere toutes les infos des games avec les points
+    //  de aujourd'hui jusqu'a dans le futur
     public function lire_games_futurs(){
         $req = $this->connect->prepare(
             'SELECT
@@ -82,6 +85,32 @@ class game
                      date_game asc'
         );
         $req->execute();
+        return $req;
+    }
+    public function get_one_game(){
+        $req = $this->connect->prepare(
+            'SELECT
+            nom_game, date_game, nom_equipe, detail_equipe, point_equipe
+            FROM 
+                equipe
+            INNER JOIN
+                participer
+            ON 
+                participer.id_equipe = equipe.id_equipe
+            INNER JOIN
+                game
+            ON 
+                game.id_game = participer.id_game
+            WHERE 
+                nom_game = :nom_game
+            ORDER BY
+                date_game desc;'
+        );
+        $req->execute(
+            array(
+                ':nom_game' => $this->nom_game
+            )
+        );
         return $req;
     }
 
