@@ -3,7 +3,7 @@ class ConfigDB
 {
     //attributs de la BDD
     private $host = 'localhost';
-    private $database_name = 'easymoney';
+    private $database_name = 'easy_money';
     private $username = 'root';
     private $password = '';
 
