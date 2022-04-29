@@ -34,7 +34,7 @@
 <ul class="tilesWrap">
 	<li>
 		<h2><?php echo $matchs[0]["date_game"] ?></h2>
-		<h3><?php echo $matchs[0]["nom_equipe1"].' Vs '.$matchs[0]["nom_equipe2"] ?></h3>
+		<h4><?php echo $matchs[0]["nom_equipe1"].' Vs '.$matchs[0]["nom_equipe2"] ?></h3>
 		<p>
 			<?php echo $matchs[0]["detail_equipe1"].' face à '. $matchs[0]["detail_equipe2"]?>
 		</p>
@@ -45,25 +45,34 @@
 	</li>
 	<li>
 		<h2><?php echo $matchs[1]["date_game"] ?></h2>
-		<h3>Les matchs arrivent</h3>
+		<h4><?php echo $matchs[1]["nom_equipe1"].' Vs '.$matchs[1]["nom_equipe2"] ?></h3>
 		<p>
-			on arrive très vite !
+		<?php echo $matchs[1]["detail_equipe1"].' face à '. $matchs[1]["detail_equipe2"]?>
+		</p>
+		<p>
+			<?php echo $matchs[1]['pourcentage_equipe1'].'% miser contre %'. $matchs[1]['pourcentage_equipe2']?>
 		</p>
 		<button>Parier ?</button>
 	</li>
 	<li>
-		<h2>03</h2>
-		<h3>Les matchs arrivent</h3>
+	<h2><?php echo $matchs[2]["date_game"] ?></h2>
+		<h4><?php echo $matchs[2]["nom_equipe1"].' Vs '.$matchs[2]["nom_equipe2"] ?></h3>
 		<p>
-			on arrive très vite !
+		<?php echo $matchs[2]["detail_equipe1"].' face à '. $matchs[2]["detail_equipe2"]?>
+		</p>
+		<p>
+			<?php echo $matchs[2]['pourcentage_equipe1'].'% miser contre %'. $matchs[2]['pourcentage_equipe2']?>
 		</p>
 		<button>Parier ?</button>
 	</li>
 	<li>
-		<h2>04</h2>
-		<h3>Les matchs arrivent</h3>
+	<h2><?php echo $matchs[3]["date_game"] ?></h2>
+		<h4><?php echo $matchs[3]["nom_equipe1"].' Vs '.$matchs[3]["nom_equipe2"] ?></h3>
 		<p>
-			on arrive très vite !
+		<?php echo $matchs[3]["detail_equipe1"].' face à '. $matchs[3]["detail_equipe2"]?>
+		</p>
+		<p>
+			<?php echo $matchs[3]['pourcentage_equipe1'].'% miser contre %'. $matchs[3]['pourcentage_equipe2']?>
 		</p>
 		<button>Parier ?</button>
 	</li>

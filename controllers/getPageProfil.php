@@ -67,3 +67,28 @@ while ($donnees = $parisUserEtResultat->fetch()){
 
 
 }
+
+for ($i=0; $i< count($matchs_miser); $i++){
+
+    echo '<p class="monProfil"><span class="maDate">'.$matchs_miser[$i]["date_game"].'</span> match des '.$matchs_miser[$i]["nom_equipe1"].' et des '.$matchs_miser[$i]["nom_equipe2"].'<br>
+    Mise sur '.
+    $matchs_miser[$i]["nom_equipe1"].' à '.$matchs_miser[$i]["pourcentage_equipe1"].'% et sur '.$matchs_miser[$i]["nom_equipe2"].' à '.$matchs_miser[$i]["pourcentage_equipe2"].'%
+    <br> Votre paris est de '.$matchs_miser[$i]["mise"].' euros pour '.$matchs_miser[$i]["nom_equipe_parier"].'</br>' ;
+    
+    if($matchs_miser[$i]["point_equipe1"]){
+    echo '<span class="mesScores">'.$matchs_miser[$i]["point_equipe1"].'</span> pour les '.$matchs_miser[$i]["nom_equipe1"].'  <span class="mesScores">'.$matchs_miser[$i]["point_equipe2"].'</span> pour les '.$matchs_miser[$i]["nom_equipe2"].'</br>';
+
+        if( ($matchs_miser[$i]["point_equipe1"] > $matchs_miser[$i]["point_equipe2"]) 
+            && ($matchs_miser[$i]["nom_equipe_parier"] == $matchs_miser[$i]["nom_equipe1"]) ){
+            echo "  <i class='fa-solid fa-trophy'></i> Vous avez gagné !".'</p>';
+        }
+
+        else if( ($matchs_miser[$i]["point_equipe1"] < $matchs_miser[$i]["point_equipe2"]) 
+            && ($matchs_miser[$i]["nom_equipe_parier"] == $matchs_miser[$i]["nom_equipe2"]) ){
+            echo "  /// Vous avez gagné !".'</p>';
+        }
+        else{
+            echo "  /// Vous avez perdu...".'</p>';
+        }
+    }
+}
