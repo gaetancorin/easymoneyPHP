@@ -21,7 +21,7 @@
 				  <li><a href="./views/connexion.php">Connexion</a></li>';}
 			else{
 			echo '<li><a href="./views/profil.php">Profil</a></li>
-				  <li><a href="./controllers/deconnection.php">Déconnection</a></li>';}?>
+				  <li><a href="./controllers/deconnection.php">Déconnexion</a></li>';}?>
             <!-- <li><a href="./views/inscription.php">Inscription</a></li>
 			<li><a href="./views/connexion.php">Connexion</a></li>
             <li><a href="../views/addOne.php">Profil</a></li> -->
@@ -40,8 +40,15 @@
 		</p>
 		<p>
 			<?php echo $matchs[0]['pourcentage_equipe1'].'% miser contre %'. $matchs[0]['pourcentage_equipe2']?>
+			<?php
+            if (isset(($matchs[0]['mise']))){
+                echo 'Vous as misé '.$matchs[0]['mise'].' euros pour les '.$matchs[0]['nom_equipe_parier'];
+            }
+            ?>
 		</p>
-		<button>Parier ?</button>
+		<form action="./views/monMatch.php" method="get" target="_blank">
+         <button type="submit">Parier</button>
+      	</form>
 	</li>
 	<li>
 		<h2><?php echo $matchs[1]["date_game"] ?></h2>
@@ -51,8 +58,15 @@
 		</p>
 		<p>
 			<?php echo $matchs[1]['pourcentage_equipe1'].'% miser contre %'. $matchs[1]['pourcentage_equipe2']?>
+			<?php
+            if (isset(($matchs[1]['mise']))){
+                echo 'Vous avez misé '.$matchs[1]['mise'].' euros pour les '.$matchs[1]['nom_equipe_parier'];
+            }
+            ?>
 		</p>
-		<button>Parier ?</button>
+		<form action="./views/monMatch.php" method="get" target="_blank">
+         <button type="submit">Parier</button>
+      	</form>
 	</li>
 	<li>
 	<h2><?php echo $matchs[2]["date_game"] ?></h2>
@@ -62,8 +76,15 @@
 		</p>
 		<p>
 			<?php echo $matchs[2]['pourcentage_equipe1'].'% miser contre %'. $matchs[2]['pourcentage_equipe2']?>
+			<?php
+            if (isset(($matchs[2]['mise']))){
+                echo 'Vous avez misé '.$matchs[2]['mise'].' euros pour les '.$matchs[2]['nom_equipe_parier'];
+            }
+            ?>
 		</p>
-		<button>Parier ?</button>
+		<form action="./views/monMatch.php" method="get" target="_blank">
+         <button type="submit">Parier</button>
+      	</form>
 	</li>
 	<li>
 	<h2><?php echo $matchs[3]["date_game"] ?></h2>
@@ -73,8 +94,17 @@
 		</p>
 		<p>
 			<?php echo $matchs[3]['pourcentage_equipe1'].'% miser contre %'. $matchs[3]['pourcentage_equipe2']?>
+			<?php
+            if (isset(($matchs[3]['mise']))){
+                echo '<span class="maMise">Vous avez misé '.$matchs[3]['mise'].' euros pour les '.$matchs[3]['nom_equipe_parier'].'</span>';
+            }
+            ?>
+			
 		</p>
-		<button>Parier ?</button>
+
+		<form action="./views/monMatch.php" method="get" target="_blank">
+         <button type="submit">Parier</button>
+      	</form>
 	</li>
 </ul>
 

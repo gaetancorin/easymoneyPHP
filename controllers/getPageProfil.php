@@ -80,7 +80,7 @@ for ($i=0; $i< count($matchs_miser); $i++){
 
         if( ($matchs_miser[$i]["point_equipe1"] > $matchs_miser[$i]["point_equipe2"]) 
             && ($matchs_miser[$i]["nom_equipe_parier"] == $matchs_miser[$i]["nom_equipe1"]) ){
-            echo "  <i class='fa-solid fa-trophy'></i> Vous avez gagné !".'</p>';
+            echo '<i class="fa-solid fa-trophy-star"></i> Vous avez gagné !'.'</p>';
         }
 
         else if( ($matchs_miser[$i]["point_equipe1"] < $matchs_miser[$i]["point_equipe2"]) 

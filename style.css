@@ -195,6 +195,10 @@ background: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.555), rgba(245, 24
 background: linear-gradient(to right, rgba(0, 0, 0, 0.555), rgba(245, 245, 245, 0.555));
 }
 
+.maMise {
+	color:black;
+	
+}
 
 /* -----------------inscription--------------- */
 
@@ -300,4 +304,36 @@ button {
 	font-weight: 600;
 	font-size: 20px;
 	text-shadow: 1px 1px black;
+}
+
+
+/* -----------------unMatch--------------- */
+
+.bodyLeMatch {
+	background-image: url("https://images2.imgbox.com/23/a6/7pNMxdIB_o.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:100vh;
+}
+
+.lematch {
+	text-transform: uppercase;
+}
+
+.containerLeMatch{
+	display: flex;
+    justify-content: center;
+    margin: 10px;
+    outline: 0;
+	
+}
+
+.leMatchDedans {
+	text-align: center;
+	font-family: 'Teko', sans-serif;
+	width: 500px;
+    padding: 10px;
+    background-color: #c5cdc294;
+    box-shadow: #6a6840 1px 1px 1px 1px;
 }

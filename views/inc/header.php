@@ -20,8 +20,8 @@
 			    echo '<li><a href="./views/inscription.php">Inscription</a></li>
 				      <li><a href="./views/connexion.php">Connexion</a></li>';}
 			    else{
-			    echo '<li><a href="../views/addOne.php">Profil</a></li>
-				      <li><a href="./controllers/deconnection.php">Déconnection</a></li>';}?>
+			    echo '<li><a href="../views/profil.php">Profil</a></li>
+				      <li><a href="./controllers/deconnection.php">Déconnexion</a></li>';}?>
                 <!-- <li><a href="./views/inscription.php">Inscription</a></li>
                 <li><a href="../views/connexion.php">Connexion</a></li>
                 <li><a href="../views/addOne.php">Profil</a></li> -->
