@@ -1,7 +1,7 @@
 <?php 
-include("../models/game.php");
-include("../config/bdd.php");
-include('../models/user.php');
+include("./models/game.php");
+include("./config/bdd.php");
+include('./models/user.php');
 
 // Je vérifie si l utilisateur est connecter
 if (isset($_SESSION['pseudo'])){
@@ -111,7 +111,7 @@ for ($i=0; $i< count($matchs_miser); $i++){
         if (isset(($matchs_miser[$i]['mise']))){
             echo '<p>Tu as misé '.$matchs_miser[$i]['mise'].' euros pour '.$matchs_miser[$i]['nom_equipe_parier'].'</p>';
         }
-		echo '<form action="./monMatch.php" method="get" target="_blank">
+		echo '<form action="./views/monMatch.php" method="get" target="_blank">
         <button type="submit">Parier</button>
        </form>
 	</li>';

@@ -15,7 +15,7 @@
         <ul class="menuBar">
 
             <li><a href="./index.php">Accueil</a></li>
-            <li><a href="../controllers/getMatchFini.php">Nos Matchs</a></li>
+            <li><a href="./views/nosMatchs.php">Nos Matchs</a></li>
             <?php
             if (!isset($_SESSION['pseudo'])){
             echo '<li><a href="./views/inscription.php">Inscription</a></li>

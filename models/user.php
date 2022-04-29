@@ -181,7 +181,6 @@ class User
         while ($donnees = $req->fetch()){
             $nom_equipe_parier = $donnees["nom_equipe"];
             $mise = $donnees["mise"];
-            echo $donnees["nom_equipe"].$donnees["mise"];
 
         }
         if (isset($mise)){

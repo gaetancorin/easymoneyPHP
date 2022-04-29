@@ -13,7 +13,7 @@
             <h1 class="logo"><img class="logo1" src="https://images2.imgbox.com/d7/66/RfTfF1nu_o.png"></h1>
             <ul class="menuBar">
                 <li><a href="../index.php">Accueil</a></li>
-                <li><a href="../controllers/getAllAll.php">Nos Matchs</a></li>
+                <li><a href="../views/nosMatchs.php">Nos Matchs</a></li>
                 <?php
                 session_start();
                 if (!isset($_SESSION['pseudo'])){
