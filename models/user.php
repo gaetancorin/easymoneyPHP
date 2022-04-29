@@ -65,6 +65,30 @@ class User
     public function set_argent($argent){
         $this->argent = $argent;
     }
+
+    // // methode qui recupere tous les matchs en lien avec ses paris
+    // // ranger de facon descendant(de la date la plus grande a la plus petite) 
+    // public function lire_paris(){
+    //     $req = $this->connect->prepare(
+    //         'SELECT
+    //          pseudo, nom_equipe, nom_game, mise, date_game 
+    //          FROM
+    //           utilisateur  
+    //         inner join parier on parier.id_utilisateur = utilisateur.id_utilisateur 
+    //         inner join equipe on parier.id_equipe = equipe.id_equipe 
+    //         inner join game on parier.id_game = game.id_game
+    //         WHERE
+    //         pseudo = :pseudo;
+    //         ORDER BY
+    //             date_game desc;'
+    //     );
+    //     $req->execute(
+    //         array(
+    //             ':pseudo' => $this->pseudo
+    //         )
+    //     );
+    //     return $req;
+    // }
     
 
     // méthode qui va créer un utilisateur dans la BDD
@@ -115,30 +139,6 @@ class User
         return $req;
     }
 
-    // methode qui recupere toutes les paris d un user grace a la table d asso parier
-    // ranger de facon descendant(de la date la plus grande a la plus petite) 
-    public function lire_paris(){
-        $req = $this->connect->prepare(
-            'SELECT
-             pseudo, nom_equipe, nom_game, mise, date_game 
-             FROM
-              utilisateur  
-            inner join parier on parier.id_utilisateur = utilisateur.id_utilisateur 
-            inner join equipe on parier.id_equipe = equipe.id_equipe 
-            inner join game on parier.id_game = game.id_game
-            WHERE
-            pseudo = :pseudo;
-            ORDER BY
-                date_game desc;'
-        );
-        $req->execute(
-            array(
-                ':pseudo' => $this->pseudo
-            )
-        );
-        return $req;
-    }
-
     public function lire_paris_resultats(){
         $req = $this->connect->prepare(
             'SELECT
@@ -160,6 +160,8 @@ class User
         );
         return $req;
     }
+
+    
 
 
 }

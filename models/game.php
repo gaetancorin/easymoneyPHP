@@ -146,12 +146,19 @@ class game
             }
         }
         // on transforme les mises total d'equipe en pourcentage
-        $mise_total = $mise_total_equipe1 + $mise_total_equipe2;
-        $pourcentage_equipe1 = $mise_total_equipe1/$mise_total*100;
-        $pourcentage_equipe2 = $mise_total_equipe2/$mise_total*100;
+        // comme on ne peut pas diviser par 0, il faut gerer si aucun pari n'est pris
+        if ($mise_total_equipe1 == 0 && $mise_total_equipe2 == 0){
+            $pourcentage_equipe1 = 50;
+            $pourcentage_equipe2 = 50;
+            return [$pourcentage_equipe1, $pourcentage_equipe2];
+        }
+        else{
+            $mise_total = $mise_total_equipe1 + $mise_total_equipe2;
+            $pourcentage_equipe1 = $mise_total_equipe1/$mise_total*100;
+            $pourcentage_equipe2 = $mise_total_equipe2/$mise_total*100;
 
-        return [$pourcentage_equipe1, $pourcentage_equipe2];
-
+            return [$pourcentage_equipe1, $pourcentage_equipe2];
+        }
     }
 
 

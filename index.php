@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,6 @@
             <li><a href="../index.php">Accueil</a></li>
             <li><a href="../controllers/getAllAll.php">Nos Matchs</a></li>
 			<?php
-			session_start();
 			if (!isset($_SESSION['pseudo'])){
 			echo '<li><a href="./views/inscription.php">Inscription</a></li>
 				  <li><a href="./views/connexion.php">Connexion</a></li>';}
@@ -29,7 +29,7 @@
     </div>
 </nav>
 
-<?php include("./controllers/getMatchFutur.php"); ?>
+<?php include("./controllers/getMatchFini.php"); ?>
 
 <ul class="tilesWrap">
 	<li>
@@ -37,6 +37,9 @@
 		<h3><?php echo $matchs[0]["nom_equipe1"].' Vs '.$matchs[0]["nom_equipe2"] ?></h3>
 		<p>
 			<?php echo $matchs[0]["detail_equipe1"].' face à '. $matchs[0]["detail_equipe2"]?>
+		</p>
+		<p>
+			<?php echo $matchs[0]['pourcentage_equipe1'].'% miser contre %'. $matchs[0]['pourcentage_equipe2']?>
 		</p>
 		<button>Parier ?</button>
 	</li>
