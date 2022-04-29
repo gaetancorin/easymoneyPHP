@@ -13,17 +13,17 @@
     <div class="containerNav">
         <h1 class="logo"><img class="logo1" src="https://images2.imgbox.com/d7/66/RfTfF1nu_o.png"></h1>
         <ul class="menuBar">
-            <li><a href="../index.php">Accueil</a></li>
+            <li><a href="./index.php">Accueil</a></li>
             <li><a href="../controllers/getAllAll.php">Nos Matchs</a></li>
-			<?php
-			if (!isset($_SESSION['pseudo'])){
-			echo '<li><a href="./views/inscription.php">Inscription</a></li>
-				  <li><a href="./views/connexion.php">Connexion</a></li>';}
-			else{
-			echo '<li><a href="./views/profil.php">Profil</a></li>
-				  <li><a href="./controllers/deconnection.php">Déconnexion</a></li>';}?>
+            <?php
+            if (!isset($_SESSION['pseudo'])){
+            echo '<li><a href="./views/inscription.php">Inscription</a></li>
+                  <li><a href="./views/connexion.php">Connexion</a></li>';}
+            else{
+            echo '<li><a href="./views/profil.php">Profil</a></li>
+                  <li><a href="./controllers/deconnection.php"><span class="monPseudo">('.$_SESSION['pseudo'].')</span> Déconnexion</a></li>';}?>
             <!-- <li><a href="./views/inscription.php">Inscription</a></li>
-			<li><a href="./views/connexion.php">Connexion</a></li>
+            <li><a href="./views/connexion.php">Connexion</a></li>
             <li><a href="../views/addOne.php">Profil</a></li> -->
         </ul>
     </div>
@@ -32,80 +32,80 @@
 <?php include("./controllers/getMatchFini.php"); ?>
 
 <ul class="tilesWrap">
-	<li>
-		<h2><?php echo $matchs[0]["date_game"] ?></h2>
-		<h4><?php echo $matchs[0]["nom_equipe1"].' Vs '.$matchs[0]["nom_equipe2"] ?></h3>
-		<p>
-			<?php echo $matchs[0]["detail_equipe1"].' face à '. $matchs[0]["detail_equipe2"]?>
-		</p>
-		<p>
-			<?php echo $matchs[0]['pourcentage_equipe1'].'% miser contre %'. $matchs[0]['pourcentage_equipe2']?>
-			<?php
+    <li>
+        <h2><?php echo $matchs[0]["date_game"] ?></h2>
+        <h4><?php echo $matchs[0]["nom_equipe1"].' Vs '.$matchs[0]["nom_equipe2"] ?></h3>
+        <p>
+            <?php echo $matchs[0]["detail_equipe1"].' face à '. $matchs[0]["detail_equipe2"]?>
+        </p>
+        <p>
+            <?php echo $matchs[0]['pourcentage_equipe1'].'% miser contre %'. $matchs[0]['pourcentage_equipe2']?>
+            <?php
             if (isset(($matchs[0]['mise']))){
                 echo 'Vous as misé '.$matchs[0]['mise'].' euros pour les '.$matchs[0]['nom_equipe_parier'];
             }
             ?>
-		</p>
-		<form action="./views/monMatch.php" method="get" target="_blank">
+        </p>
+        <form action="./views/monMatch.php" method="get" target="_blank">
          <button type="submit">Parier</button>
-      	</form>
-	</li>
-	<li>
-		<h2><?php echo $matchs[1]["date_game"] ?></h2>
-		<h4><?php echo $matchs[1]["nom_equipe1"].' Vs '.$matchs[1]["nom_equipe2"] ?></h3>
-		<p>
-		<?php echo $matchs[1]["detail_equipe1"].' face à '. $matchs[1]["detail_equipe2"]?>
-		</p>
-		<p>
-			<?php echo $matchs[1]['pourcentage_equipe1'].'% miser contre %'. $matchs[1]['pourcentage_equipe2']?>
-			<?php
+        </form>
+    </li>
+    <li>
+        <h2><?php echo $matchs[1]["date_game"] ?></h2>
+        <h4><?php echo $matchs[1]["nom_equipe1"].' Vs '.$matchs[1]["nom_equipe2"] ?></h3>
+        <p>
+        <?php echo $matchs[1]["detail_equipe1"].' face à '. $matchs[1]["detail_equipe2"]?>
+        </p>
+        <p>
+            <?php echo $matchs[1]['pourcentage_equipe1'].'% miser contre %'. $matchs[1]['pourcentage_equipe2']?>
+            <?php
             if (isset(($matchs[1]['mise']))){
                 echo 'Vous avez misé '.$matchs[1]['mise'].' euros pour les '.$matchs[1]['nom_equipe_parier'];
             }
             ?>
-		</p>
-		<form action="./views/monMatch.php" method="get" target="_blank">
+        </p>
+        <form action="./views/monMatch.php" method="get" target="_blank">
          <button type="submit">Parier</button>
-      	</form>
-	</li>
-	<li>
-	<h2><?php echo $matchs[2]["date_game"] ?></h2>
-		<h4><?php echo $matchs[2]["nom_equipe1"].' Vs '.$matchs[2]["nom_equipe2"] ?></h3>
-		<p>
-		<?php echo $matchs[2]["detail_equipe1"].' face à '. $matchs[2]["detail_equipe2"]?>
-		</p>
-		<p>
-			<?php echo $matchs[2]['pourcentage_equipe1'].'% miser contre %'. $matchs[2]['pourcentage_equipe2']?>
-			<?php
+        </form>
+    </li>
+    <li>
+    <h2><?php echo $matchs[2]["date_game"] ?></h2>
+        <h4><?php echo $matchs[2]["nom_equipe1"].' Vs '.$matchs[2]["nom_equipe2"] ?></h3>
+        <p>
+        <?php echo $matchs[2]["detail_equipe1"].' face à '. $matchs[2]["detail_equipe2"]?>
+        </p>
+        <p>
+            <?php echo $matchs[2]['pourcentage_equipe1'].'% miser contre %'. $matchs[2]['pourcentage_equipe2']?>
+            <?php
             if (isset(($matchs[2]['mise']))){
                 echo 'Vous avez misé '.$matchs[2]['mise'].' euros pour les '.$matchs[2]['nom_equipe_parier'];
             }
             ?>
-		</p>
-		<form action="./views/monMatch.php" method="get" target="_blank">
+        </p>
+        <form action="./views/monMatch.php" method="get" target="_blank">
          <button type="submit">Parier</button>
-      	</form>
-	</li>
-	<li>
-	<h2><?php echo $matchs[3]["date_game"] ?></h2>
-		<h4><?php echo $matchs[3]["nom_equipe1"].' Vs '.$matchs[3]["nom_equipe2"] ?></h3>
-		<p>
-		<?php echo $matchs[3]["detail_equipe1"].' face à '. $matchs[3]["detail_equipe2"]?>
-		</p>
-		<p>
-			<?php echo $matchs[3]['pourcentage_equipe1'].'% miser contre %'. $matchs[3]['pourcentage_equipe2']?>
-			<?php
+        </form>
+    </li>
+    <li>
+    <h2><?php echo $matchs[3]["date_game"] ?></h2>
+        <h4><?php echo $matchs[3]["nom_equipe1"].' Vs '.$matchs[3]["nom_equipe2"] ?></h3>
+        <p>
+        <?php echo $matchs[3]["detail_equipe1"].' face à '. $matchs[3]["detail_equipe2"]?>
+        </p>
+        <p>
+            <?php echo $matchs[3]['pourcentage_equipe1'].'% miser contre %'. $matchs[3]['pourcentage_equipe2']?>
+            <?php
             if (isset(($matchs[3]['mise']))){
                 echo '<span class="maMise">Vous avez misé '.$matchs[3]['mise'].' euros pour les '.$matchs[3]['nom_equipe_parier'].'</span>';
             }
             ?>
-			
-		</p>
+            
+        </p>
 
-		<form action="./views/monMatch.php" method="get" target="_blank">
+        <form action="./views/monMatch.php" method="get" target="_blank">
          <button type="submit">Parier</button>
-      	</form>
-	</li>
+        </form>
+    </li>
 </ul>
 
 
