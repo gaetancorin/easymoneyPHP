@@ -45,29 +45,57 @@ while($donnees = $games_finis->fetch()){
 
 
         if ($connexion){
+            // je reinitialise la variable $equipeparier_mise 
+            $equipeparier_mise = 0;
             // je recupère la mise et l equipe sur lequel a miser l'utilisateur 
             // uniquement sur ce match
             $myUser = new User();
-            $myUser->set_pseudo($pseudo);
-            // $parisUserEtResultat = $myUser->get_infos_mise();
-            // variable qui prend le nom_game et qui retourne le nom_equipe_parier et la mise 
+            $myUser->set_pseudo($pseudo); 
+            $equipeparier_mise = $myUser->get_infos_mise($nom_game);
+            if (isset($equipeparier_mise['mise'])){
+                $nom_equipe_parier = $equipeparier_mise['nom_equipe_parier'];
+                $mise = $equipeparier_mise['mise'];
+            }
+            
+        
+ 
         }
         
 
 
         // Une fois toutes les informations dans des variables, je le met dans un tableau associatif
-        $match = [
-            'nom_game' => $nom_game, 
-            'date_game' => $date_game, 
-            'nom_equipe1' => $nom_equipe1,
-            'detail_equipe1' => $detail_equipe1,
-            'point_equipe1' => $point_equipe1,
-            'pourcentage_equipe1' => $pourcentage_equipe1,
-            'nom_equipe2' => $nom_equipe2,
-            'detail_equipe2' => $detail_equipe2,           
-            'point_equipe2' => $point_equipe2,
-            'pourcentage_equipe2' => $pourcentage_equipe2,
-        ];
+        if (isset($equipeparier_mise['mise'])){
+            $match = [
+                'nom_game' => $nom_game, 
+                'date_game' => $date_game, 
+                'nom_equipe1' => $nom_equipe1,
+                'detail_equipe1' => $detail_equipe1,
+                'point_equipe1' => $point_equipe1,
+                'pourcentage_equipe1' => $pourcentage_equipe1,
+                'nom_equipe2' => $nom_equipe2,
+                'detail_equipe2' => $detail_equipe2,           
+                'point_equipe2' => $point_equipe2,
+                'pourcentage_equipe2' => $pourcentage_equipe2,
+                'nom_equipe_parier' => $nom_equipe_parier,
+                'mise' =>  $mise,
+            ];
+        }
+        else{
+            $match = [
+                'nom_game' => $nom_game, 
+                'date_game' => $date_game, 
+                'nom_equipe1' => $nom_equipe1,
+                'detail_equipe1' => $detail_equipe1,
+                'point_equipe1' => $point_equipe1,
+                'pourcentage_equipe1' => $pourcentage_equipe1,
+                'nom_equipe2' => $nom_equipe2,
+                'detail_equipe2' => $detail_equipe2,           
+                'point_equipe2' => $point_equipe2,
+                'pourcentage_equipe2' => $pourcentage_equipe2,
+
+                ];
+        }
+
         // Puis je met ce tableau dans un autre tableau contenant tous les matchs futur
         array_push($matchs, $match);
 

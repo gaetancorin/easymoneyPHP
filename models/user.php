@@ -161,6 +161,35 @@ class User
         return $req;
     }
 
+    //récupère le nom de l equipe miser et la mise de l'utilisateur connecté grace au nom_game.
+    public function get_infos_mise($nom_game){
+        $req = $this->connect->prepare(
+            'SELECT nom_equipe, mise 
+            from utilisateur 
+            inner join parier on parier.id_utilisateur = utilisateur.id_utilisateur 
+            inner join game on parier.id_game = game.id_game 
+            inner join equipe on equipe.id_equipe = parier.id_equipe 
+            where utilisateur.pseudo = :pseudo 
+            and game.nom_game = :nom_game ;'
+        );
+        $req->execute(
+            array(
+                ':pseudo' => $this->pseudo,
+                ':nom_game' => $nom_game
+            )
+        );
+        while ($donnees = $req->fetch()){
+            $nom_equipe_parier = $donnees["nom_equipe"];
+            $mise = $donnees["mise"];
+            echo $donnees["nom_equipe"].$donnees["mise"];
+
+        }
+        if (isset($mise)){
+            return ['nom_equipe_parier' =>$nom_equipe_parier, 'mise' =>$mise,];
+        }
+
+    }
+
     
 
 
