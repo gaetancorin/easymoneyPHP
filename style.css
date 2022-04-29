@@ -2,6 +2,9 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+
+
 body {
     background-image: url("https://images2.imgbox.com/04/af/7MmZJ1gP_o.jpg");
     background-size: cover;
@@ -65,7 +68,7 @@ body {
 }
 
 
-/* -----------------card--------------- */
+/* -----------------card/index--------------- */
 
 .tilesWrap {
 	padding: 0;
@@ -84,13 +87,13 @@ body {
 	margin: 10px;
 	font-family: 'helvetica', san-serif;
 	min-height: 25vh;
-	background: #262a2b6c;
+	background: #262a2b8f;
 	/*border: 1px solid #252727;*/
 	text-align: left;
 }
 .tilesWrap li h2 {
     color: #c0611f;
-	font-size: 60px;
+	font-size: 30px;
 	margin: 0;
 	position: absolute;
 	opacity: 0.5;
@@ -98,16 +101,26 @@ body {
 	right: 10px;
 	transition: all 0.3s ease-in-out;
 }
-.tilesWrap li h3 {
+.tilesWrap li h4{
+	color:#6f7f3e;
+	text-shadow: 1px 1px black;
+	text-transform: uppercase;
+}
+
+/*.tilesWrap li h3 {
 	font-size: 20px;
 	color: #b7b7b7;
 	margin-bottom: 5px;
-}
+}*/
+
 .tilesWrap li p {
 	font-size: 16px;
+	font-family: 'Teko', sans-serif;
 	line-height: 18px;
 	color: #b7b7b7;
+	text-shadow: 1px 1px black;
 	margin-top: 5px;
+	text-transform: uppercase;
 }
 .tilesWrap li button {
 	background: transparent;
@@ -203,7 +216,7 @@ background: linear-gradient(to right, rgba(0, 0, 0, 0.555), rgba(245, 245, 245, 
     text-align: center;
 }
 
-.inscriptionFormulaire{
+.inscriptionFormulaire {
     width: 400px;
     padding: 10px;
     background-color: #f9a7558a;
@@ -241,3 +254,50 @@ button {
 }
 
 
+/* -----------------profil--------------- */
+
+.bodyProfil {
+	background-image: url("https://images2.imgbox.com/e4/51/5TDjk5Ya_o.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:100vh;
+}
+
+.bodyProfil h1 {
+	text-transform: uppercase;
+}
+
+.containerProfil {
+	display: flex;
+    justify-content: end;
+    margin: 10px;
+    outline: 0;
+	
+}
+
+.containerDedans {
+	font-family: 'Teko', sans-serif;
+	width: 500px;
+    padding: 10px;
+    background-color: #c5cdc294;
+    box-shadow: #6a6840 1px 1px 1px 1px;
+}
+
+.monProfil {
+	color:black;
+}
+
+.monProfil .maDate {
+	color:#3a4619;
+	font-weight: 400;
+	font-size: 20px;
+	text-shadow: 1px 1px black;
+}
+
+.monProfil .mesScores {
+	color:#c0611f;
+	font-weight: 600;
+	font-size: 20px;
+	text-shadow: 1px 1px black;
+}

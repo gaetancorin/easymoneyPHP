@@ -5,7 +5,7 @@ class ConfigDB
     private $host = 'localhost';
     private $database_name = 'easymoney';
     private $username = 'root';
-    private $password = '';
+    private $password = 'root';
 
     public $connect;
 
