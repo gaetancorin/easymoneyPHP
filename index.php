@@ -23,11 +23,7 @@
             else{
             echo '<li><a href="./views/profil.php">Profil</a></li>
                   <li><a href="./controllers/deconnection.php"><span class="monPseudo">('.$_SESSION['pseudo'].')</span> Déconnexion</a></li>';}?>
-
-
-            <!-- <li><a href="./views/inscription.php">Inscription</a></li>
-            <li><a href="./views/connexion.php">Connexion</a></li>
-            <li><a href="../views/addOne.php">Profil</a></li> -->
+                  
         </ul>
     </div>
 </nav>

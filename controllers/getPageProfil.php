@@ -2,7 +2,6 @@
 include('../config/bdd.php');
 include('../models/user.php');
 include('../models/game.php');
-session_start();
 $pseudo = $_SESSION['pseudo'];
 
 // je lis les paris de l'utilisateur connecté, 

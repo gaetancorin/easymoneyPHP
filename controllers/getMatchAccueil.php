@@ -102,11 +102,11 @@ while($donnees = $games_finis->fetch()){
 echo '<ul class="tilesWrap">';
 for ($i=0; $i< count($matchs_miser); $i++){
     echo'<li>
-		<h2>'.$matchs_miser[0]["date_game"].'</h2>
-		<h4> '.$matchs_miser[0]["nom_equipe1"].' Vs '.$matchs_miser[0]["nom_equipe2"].'</h3>
-		<p>'.$matchs_miser[0]["detail_equipe1"].' face à '. $matchs_miser[0]["detail_equipe2"].'</p>
+		<h2>'.$matchs_miser[$i]["date_game"].'</h2>
+		<h4> '.$matchs_miser[$i]["nom_equipe1"].' Vs '.$matchs_miser[$i]["nom_equipe2"].'</h3>
+		<p>'.$matchs_miser[$i]["detail_equipe1"].' face à '. $matchs_miser[$i]["detail_equipe2"].'</p>
 		<p>
-			'.$matchs_miser[0]['pourcentage_equipe1'].'% miser contre %'. $matchs_miser[0]['pourcentage_equipe2'].'
+			'.$matchs_miser[$i]['pourcentage_equipe1'].'% miser contre '. $matchs_miser[$i]['pourcentage_equipe2'].' %
 		</p>';
         if (isset(($matchs_miser[$i]['mise']))){
             echo '<p>Tu as misé '.$matchs_miser[$i]['mise'].' euros pour '.$matchs_miser[$i]['nom_equipe_parier'].'</p>';

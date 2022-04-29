@@ -112,7 +112,7 @@ for ($i=0; $i< count($matchs_miser); $i++){
         <p>'.$matchs_miser[$i]["point_equipe1"].' pour les '.$matchs_miser[$i]["nom_equipe1"].'<br>'
         .$matchs_miser[$i]["point_equipe2"].' pour les '.$matchs_miser[$i]["nom_equipe2"].'</p></br>
 		<p>
-			'.$matchs_miser[$i]['pourcentage_equipe1'].'% miser contre %'. $matchs_miser[$i]['pourcentage_equipe2'].'
+			'.$matchs_miser[$i]['pourcentage_equipe1'].'% miser contre '. $matchs_miser[$i]['pourcentage_equipe2'].'%
 		</p>';
         if (isset(($matchs_miser[$i]['mise']))){
             echo '<p>Tu as misé '.$matchs_miser[$i]['mise'].' euros pour '.$matchs_miser[$i]['nom_equipe_parier'].'</p>';
