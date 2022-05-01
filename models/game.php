@@ -154,6 +154,7 @@ class game
         }
         else{
             $mise_total = $mise_total_equipe1 + $mise_total_equipe2;
+            // round(nombre, arrondis) arrondis a 2 chiffres apres la virgule
             $pourcentage_equipe1 = round(($mise_total_equipe1/$mise_total*100),2);
             $pourcentage_equipe2 = round(($mise_total_equipe2/$mise_total*100),2);
 
