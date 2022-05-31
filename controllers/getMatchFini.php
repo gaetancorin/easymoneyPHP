@@ -104,7 +104,7 @@ while($donnees = $games_finis->fetch()){
 // echo $matchs[0]["date_game"];
 
 echo '<ul class="tilesWrap">';
-for ($i=0; $i< count($matchs_miser); $i++){
+for ($i=0; $i< 5; $i++){
     echo'<li>
 		<h2>'.$matchs_miser[$i]["date_game"].'</h2>
 		<h4> '.$matchs_miser[$i]["nom_equipe1"].' Vs '.$matchs_miser[$i]["nom_equipe2"].'</h3>

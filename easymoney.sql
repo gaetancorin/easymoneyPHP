@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 29 avr. 2022 à 20:13
+-- Généré le : mar. 31 mai 2022 à 10:17
 -- Version du serveur : 10.4.21-MariaDB
 -- Version de PHP : 8.0.12
 
@@ -120,6 +120,7 @@ INSERT INTO `parier` (`id_game`, `id_utilisateur`, `id_equipe`, `mise`) VALUES
 (4, 20, 4, 2),
 (5, 20, 10, 5),
 (8, 20, 8, 4),
+(13, 6, 13, 20),
 (16, 6, 16, 14),
 (16, 20, 3, 15),
 (17, 6, 17, 50),
@@ -212,7 +213,7 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo`, `prenom`, `nom`, `mot_de_
 (4, 'Kheandee', 'Valentin', 'Dietrich', 'vdietrich', 'kheandee@gmail.com'),
 (5, 'KimK', 'Adeline', 'Mendouga', 'amendouga', 'realkim@gmail.com'),
 (6, 'JojoFront', 'Johan', 'Valero', 'jvalero', 'jojofront@gmail.com'),
-(20, 'gaetan331', 'gaetan', 'corin', '1234', 'gaetan@gaetan.fr');
+(20, 'admin', 'gaetan', 'corin', 'admin', 'gaetan@gaetan.fr');
 
 --
 -- Index pour les tables déchargées

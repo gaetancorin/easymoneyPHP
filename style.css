@@ -6,11 +6,13 @@
 
 
 body {
-    background-image: url("https://images2.imgbox.com/04/af/7MmZJ1gP_o.jpg");
+    /* background-image: url("https://images2.imgbox.com/04/af/7MmZJ1gP_o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height:100vh;
+    height:100vh; */
+	background:url("https://images2.imgbox.com/04/af/7MmZJ1gP_o.jpg") fixed no-repeat;
+    background-size: 100% 100%;
 }
 
 
@@ -203,11 +205,14 @@ background: linear-gradient(to right, rgba(0, 0, 0, 0.555), rgba(245, 245, 245, 
 /* -----------------inscription--------------- */
 
 .bodyInscription {
-    background-image: url("https://images2.imgbox.com/bd/59/g8L1dPvj_o.jpg");
+    /* background-image: url("https://images2.imgbox.com/bd/59/g8L1dPvj_o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height:100vh;
+    height:100vh; */
+	background:url("https://images2.imgbox.com/bd/59/g8L1dPvj_o.jpg") fixed no-repeat;
+    background-size: 100% 100%;
+
 }
 
 .containerInscription{
@@ -261,11 +266,13 @@ button {
 /* -----------------profil--------------- */
 
 .bodyProfil {
-	background-image: url("https://images2.imgbox.com/e4/51/5TDjk5Ya_o.jpg");
+	/* background-image: url("https://images2.imgbox.com/e4/51/5TDjk5Ya_o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height:100vh;
+    height:100vh; */
+	background:url("https://images2.imgbox.com/e4/51/5TDjk5Ya_o.jpg") fixed no-repeat;
+    background-size: 100% 100%;
 }
 
 .bodyProfil h1 {
@@ -310,11 +317,13 @@ button {
 /* -----------------unMatch--------------- */
 
 .bodyLeMatch {
-	background-image: url("https://images2.imgbox.com/23/a6/7pNMxdIB_o.jpg");
+	/* background-image: url("https://images2.imgbox.com/23/a6/7pNMxdIB_o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height:100vh;
+    height:100vh; */
+	background:url("https://images2.imgbox.com/23/a6/7pNMxdIB_o.jpg") fixed no-repeat;
+    background-size: 100% 100%;
 }
 
 .lematch {
